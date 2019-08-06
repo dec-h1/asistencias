@@ -1,0 +1,79 @@
+<?php
+    session_start();
+
+    if ($_SESSION['permisos'] != 'admin')
+	{
+		header('Location: /');
+		exit();
+	}
+
+	function unique_id($l = 8)
+	{
+		return substr(md5(uniqid(mt_rand(), true)), 0, $l);
+	}
+	
+	$id_generate = strtoupper(unique_id(6).'-a');
+?>
+<div class="form-data">
+	<div class="head">
+		<h1 class="titulo">Agregar</h1>
+    </div>
+   <div class="body">
+        <form name="form-add-users" action="insert.php" method="POST">
+		<div class="first">
+		<label class="label">Usuario</label>
+				<input class="text" style=" display: none;" type="text" name="txtuserid" value="<?php echo $id_generate;?>" maxlength="50" required/>
+				<input class="text" type="text" name="txt" value="<?php echo $id_generate;?>" required disabled/>
+                <label class="label">Nombre</label>
+				<input class="text" type="text" name="txtnombre" value="" maxlength="25" required autofocus/>
+                <label class="label">Apellidos</label>
+				<input class="text" type="text" name="txtapellidos" value="" maxlength="50" required/>
+				<label class="label">CURP</label>
+                <input class="text" type="text" name="txtcurp" value="" maxlength="18" onkeyup="this.value = this.value.toUpperCase()" required/>
+                <label class="label">RFC</label>
+                <input class="text" type="text" name="txtrfc" value="" maxlength="13" onkeyup="this.value = this.value.toUpperCase()" required/>
+			</div>
+			<div class="last">
+				<label class="label">Telefono</label>
+                <input class="text" type="text" name="txttelefono" value="" maxlength="10" required/>
+                <label class="label">Domicilio</label>
+                <input class="text" type="text" name="txtdomicilio" value="" maxlength="100" required/>
+				<label class="label">Especialidad</label>
+				<input class="text" type="text" name="txtespecialidad" value="" maxlength="20"/>
+				<label class="label">Documentación</label>
+				<select class="select" name="selectdocumentacion">
+					<option value="0">Seleccionar</option>
+					<option value="1">Si</option>
+					<option value="0">No</option>
+				</select>
+				<label class="label">Observación</label>
+				<input class="text" type="text" name="txtobservacion" value="" maxlength="200"/>
+			</div>
+			<button class="btn icon icon-confirm" type="submit"></button>
+        </form>
+    </div>
+</div>
+<div class="form-options">
+	<div class="search">
+		<form name="form-search" action="#" method="POST">
+			<p>
+				<input type="text" class="text" name="search" placeholder="Buscar . . ." maxlength="50">
+				<button class="btn-search icon  icon-search" type="submit"></button>
+			</p>
+		</form>
+	</div>
+	<div class="options">
+		<form action="#" method="POST">
+			<button class="btn disabled icon icon-plus" name="btn" value="form_add" type="submit" disabled></button>
+		</form>
+		<form action="#" method="POST">
+			<button class="btn disabled icon icon-coding" name="btn" value="form_coding" type="submit" disabled></button>
+		</form>
+		<form action="#" method="POST">
+			<button class="btn disabled icon icon-printer" name="btn" value="form_printer" type="submit" disabled></button>
+		</form>
+		<form action="#" method="POST">
+			<button class="btnexit icon icon-exit" name="btn" value="form_default" type="submit"></button>
+		</form>
+    </div>
+</div>

@@ -1,0 +1,291 @@
+@charset "utf-8";
+/*-------------------------------------------
+  style.css
+
+  Copyright 2019 Diego Carmona Bernal
+-------------------------------------------*/
+/*-------------------------------------------
+  Inicio | Estructura
+-------------------------------------------*/
+* { margin: 0; padding: 0; line-height: 1.2; }
+
+::selection { background: #9F9F9F; color: #ffffff; }
+
+::-webkit-selection { background: #9F9F9F; color: #ffffff; }
+
+::-moz-selection { background: #9F9F9F; color: #ffffff; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4f4; color: #252525; }
+
+body.login { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f4f4 url(../images/background-login.jpg) no-repeat center fixed; background-size: cover !important; }
+
+.wrapper { width: 980px; margin: 0 auto; }
+
+.wrapper:after { display: block; content: ""; clear: both; }
+/*-------------------------------------------
+  Fin | Estructura
+-------------------------------------------*/
+/*-------------------------------------------
+  Inicio | Header
+-------------------------------------------*/
+.header { box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+/*-------------------------------------------
+  Fin | Header
+-------------------------------------------*/
+/*-------------------------------------------
+  Inicio | Información Usuario
+-------------------------------------------*/
+.info-user { width: 100%; background: #3ca35e; border-bottom: solid #ffffff 2px; box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+
+.info-user:after { display: block; content: ""; clear: both; }
+
+.info-user img { float: left; width: 50px; height: 50px; margin: 5px 0; border: 3px solid #227455; border-radius: 2em; }
+
+.info-user .name-user { display: block; padding: 12px 0 0 70px; color: #ffffff; font-size: .9em; font-weight: bold; text-transform: uppercase; }
+
+.info-user .periodo-escolar { color: #ffffff; text-transform: uppercase; text-decoration: none; outline: none; }
+
+.info-user .periodo-escolar:hover, .info-user .periodo-escolar:focus { color: #227455; }
+
+.info-user .logout { display: block; margin: 6px 0 0 70px; }
+
+.info-user .logout a { color: #ffffff; font-size: .7em; font-weight: bold; text-transform: uppercase; text-decoration: none; outline: none; }
+
+.info-user .logout a:hover, .info-user .logout a:focus { color: #227455; }
+
+.info-user .fecha { display: block; color: #ffffff; float: right; margin: -30px 15px 0 0; font-size: .9em; font-weight: bold; text-transform: uppercase; }
+/*-------------------------------------------
+  Fin | Información Usuario
+-------------------------------------------*/
+/*-------------------------------------------
+  Inicio | Mensajes
+-------------------------------------------*/
+.wrap-message-info { width: 978px; margin: 0 0 25px 0; background: #D5EFCA; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 1px solid #B5EA9E; }
+
+.wrap-message-info h1 { margin: 20px 200px; color: #227455; font-size: 1em; text-align: center; }
+
+.wrap-message-info .button { float: right; margin: 8px 8px 0 0; color: #555555; font-size: .8em; font-weight: 900; text-decoration: none; }
+
+.wrap-message-error { width: 978px; margin:  0 0 25px 0; background: #F2DEDE; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 1px solid #EED3D7; }
+
+.wrap-message-error h1 { margin: 20px 200px; color: #B94A48; font-size: 1em; text-align: center; }
+
+.wrap-message-error .button { float: right; margin: 8px 8px 0 0; color: #555555; font-size: .8em; font-weight: 900; text-decoration: none; }
+/*-------------------------------------------
+  Fin | Mensajes
+-------------------------------------------*/
+/*-------------------------------------------
+  Inicio | Administrador
+-------------------------------------------*/
+.nav-admin { background: transparent; }
+
+.nav-admin:after { display: block; content: ""; clear: both; }
+
+.nav-admin ul.first { margin: 0 0 0 0; }
+
+.nav-admin ul { list-style: none; margin: 20px 0 0 0; }
+
+.nav-admin ul:after { display: block; content: ""; clear: both; }
+
+.nav-admin ul li a.first { margin: 0 0 0 0;}
+
+.nav-admin ul li a { margin: 0 0 0 15px; }
+
+.nav-admin ul li a.a:hover, .nav-admin ul li a.b:hover, .nav-admin ul li a.c:hover, .nav-admin ul li a.d:hover, .nav-admin ul li a.e:hover, .nav-admin ul li a.f:hover, .nav-admin ul li a.g:hover, .nav-admin ul li a.h:hover, .nav-admin ul li a.a:focus, .nav-admin ul li a.b:focus, .nav-admin ul li a.c:focus, .nav-admin ul li a.d:focus, .nav-admin ul li a.e:focus, .nav-admin ul li a.f:focus, .nav-admin ul li a.g:focus, .nav-admin ul li a.h:focus { background: #606060; border-top: 5px solid #4C4C4C; border-bottom: 5px solid #4C4C4C; }
+
+.nav-admin ul li a { text-decoration: none; display: block; float: left; text-align: center; color: #ffffff; padding: 40px 0; width: 233px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); text-transform: uppercase; font-weight: bold; font-size: 1em; outline: none; }
+
+.nav-admin ul li a.a { background: #357AA5; border-top: 5px solid #0C616D; border-bottom: 5px solid #0C616D; }
+
+.nav-admin ul li a.b { background: #D6782B; border-top: 5px solid #A5640E; border-bottom: 5px solid #A5640E; }
+
+.nav-admin ul li a.c { background: #1A872C; border-top: 5px solid #0C721D; border-bottom: 5px solid #0C721D; }
+
+.nav-admin ul li a.d { background: #A52929; border-top: 5px solid #931919; border-bottom: 5px solid #931919; }
+
+.nav-admin ul li a.e { background: #6B3463; border-top: 5px solid #592151; border-bottom: 5px solid #592151; }
+
+.nav-admin ul li a.f { background: #8C5629; border-top: 5px solid #703F16; border-bottom: 5px solid #703F16; }
+
+.nav-admin ul li a.g { background: #308972; border-top: 5px solid #146D55; border-bottom: 5px solid #146D55; }
+
+.nav-admin ul li a.h { background: #CC8A17; border-top: 5px solid #96650F; border-bottom: 5px solid #96650F; }
+
+/*-------------------------------------------
+  Fin | Administrador
+-------------------------------------------*/
+
+/*-------------------------------------------
+  Formulario Iniciar Sesión
+-------------------------------------------*/
+.wrap-title-login { height: 220px; background: #227455; box-shadow: 0 1px 6px rgba(0,0,0,0.3); }
+
+.wrap-title-login .title-login h1{ text-align: center; padding: 25px 0 0 0; font-size: 3.6em; color: #ffffff; }
+
+.wrap-form-login { width: 380px; height: 345px; margin: -55px auto 0; background-color: #ffffff; border-top: 3px solid #1a4b39; box-shadow: 0 1px 6px rgba(0,0,0,0.2); border-radius: 0.5em; }
+
+.logo-form-login { position: absolute; width: 140px; height: 140px; margin: -60px 117px 0; background-color: #ffffff; border: 4px solid #1d5540; border-radius: 5em; }
+
+.logo-form-login img { width: 130px; height: 130px; margin: 5px 0 0 5px; border-radius: 5em; }
+
+.wrap-form-login .label { display: block; padding: 100px 0 20px 0; color: #404040; font-size: 1.7em; text-align: center; }
+
+.wrap-form-login .labelrecordar { float: left; margin: 33px 0 0 22.5px; color: #404040; font-size: 1em; font-weight: bold; }
+
+.wrap-form-login .text { width: 325px; height: 40px; margin: 0 0 0 22.5px; padding: 0 0 0 10px; border: 1px solid #CECECE; border-radius: 0.4em; font-size: .9em; }
+
+.wrap-form-login .textcontrasena { width: 325px; height: 40px; margin: 15px 0 0 22.5px; padding: 0 0 0 10px; border: 1px solid #CECECE; border-radius: 0.4em; font-size: .9em; }
+
+.wrap-form-login .button { float: right; width: 50px; height: 50px; margin: 20px 22.5px 0 0 ; background: #227455; border: none; border-radius: 2em; color: #ffffff; font-size: .9em; font-weight: bold; cursor: pointer; }
+
+.wrap-form-login #checkboxrecordar { float: left; margin: 38px 0 0 10px; }
+
+/*-------------------------------------------
+  Formularios
+-------------------------------------------*/
+.content { margin: 30px auto; width: 980px; }
+
+.content:after { display: block; content: ""; clear: both; }
+
+/*-------------------------------------------
+  Formulario Tabla
+-------------------------------------------*/
+.form-table-data { float: left; margin: 0 0 35px 0; width: 650px; background: #ffffff; box-shadow: 0 1px 4px rgba(0,0,0,0.3); border-radius: 0.4em; }
+
+.form-table-data .head { padding: 15px 25px 10px; border-bottom: solid #e6e6e6 1px; }
+
+.form-table-data .head h1 { color: #316352; font-size: 1.8em; font-weight: bold; }
+
+.form-table-data table { margin: 30px 25px; width: 600px; border-collapse: collapse; border: none; }
+
+.form-table-data th { padding: 5px 7px; background: #3ca35e; color: #ffffff; border: none; text-align: left; font-size: 0.8em; font-weight: bold; text-transform: uppercase; }
+
+.form-table-data th.center { text-align: center; }
+
+.form-table-data th.view { background: #3ca35e; }
+
+.form-table-data th.edit { background: #3c93a3; }
+
+.form-table-data th.delete { background: #e94848; }
+
+.form-table-data td { padding: 5px 7px; background: #ffffff; color: #252525; border-top: none; border-left: none; border-right: none; border-bottom: solid #e6e6e6 1px; font-size: 0.9em; font-weight: normal; text-align: left; }
+
+.form-table-data td.center { text-align: center; }
+
+.form-table-data td button.btnview { margin: 0 auto; display: block; width: 20px; height: 20px; background: #3ca35e; border: none; border-radius: 2em; color: #ffffff; text-decoration: none; cursor: pointer; }
+
+.form-table-data td button.btnview:hover { background: #318a4e; border: none; }
+
+.form-table-data td button.btnedit { margin: 0 auto; display: block; width: 20px; height: 20px; background: #3c93a3; border: none; border-radius: 2em; color: #ffffff; text-decoration: none; cursor: pointer; }
+
+.form-table-data td button.btnedit:hover { background: #356694; border: none; }
+
+.form-table-data td button.btndelete { margin: 0 auto; display: block; width: 20px; height: 20px; background: #e94848; border: none; border-radius: 2em; color: #ffffff; text-decoration: none; cursor: pointer; }
+
+.form-table-data td button.btndelete:hover { background: #aa3535; border: none; }
+
+.form-table-data th a { color: #ffffff; font-size: 1.4em; text-decoration: none; }
+
+.form-table-data tr:hover td { background: #f4fdf3; }
+
+.form-table-data .pages { margin: 40px 0 25px 25px; }
+
+.form-table-data .pages:after { display: block; content: ""; clear: both; }
+
+.form-table-data .pages ul li { list-style: none; }
+
+.form-table-data .pages ul li button { float: left; margin: 0 10px 0 0; width: 30px; height: 30px; background: #3ca35e; border: solid #318a4e 3px; border-radius: 2em; color: #ffffff; font-size: 0.8em; font-weight: bold; }
+
+.form-table-data .pages ul li button:hover { background: #318a4e; border: solid #3ca35e 3px; cursor: pointer; }
+
+.form-table-data .pages ul li.active button { background: #318a4e; border: solid #3ca35e 3px; }
+
+.form-table-data .pages ul li.active button:hover { cursor: normal; }
+
+/*-------------------------------------------
+  Formulario Herramientas
+-------------------------------------------*/
+.form-options { float: right; margin: 0 0 0 0; width: 300px; background: #ffffff; box-shadow: 0 1px 4px rgba(0,0,0,0.3); border-radius: 0.4em; }
+
+.form-options .head { padding: 10.5px 0; border-bottom: solid #e6e6e6 1px; }
+
+.form-options .head h1 { display: block; color: #316352; font-size: 2.4em; text-align: center; text-transform: uppercase; text-decoration: none; }
+
+.form-options .search { margin: 20px 0 0 0; }
+
+.form-options .search:after { display: block; content: ""; clear: both; }
+
+.form-options .search .text { float: left; width: 203px; height: 40px; margin: 0 0 0 10px; padding: 0 12px; background: #ffffff; border: solid #e6e6e6 1px; border-radius: 1.5em; ; color: #000000; font-size: 1em; }
+
+.form-options .search .btn-search { float: left; margin: 0 0 0 10px; width: 40px; height: 40px; background: #3ca35e; border: solid #318a4e 3px; border-radius: 2em; color: #ffffff; font-size: 1.2em; cursor: pointer; }
+
+.form-options .search .btn-search:hover { background: #318a4e; border: solid #3ca35e 3px; }
+
+.form-options .options { margin: 20px 0 0 0; padding: 15px 0 15px 0; border-top: solid #e6e6e6 1px; }
+
+.form-options .options:after { display: block; content: ""; clear: both; }
+
+.form-options .options .btn { float: left; margin: 0 0 0 28px; width: 40px; height: 40px; background: #3ca35e; color: #ffffff; font-size: 1.2em; border: solid #318a4e 3px; border-radius: 2em; cursor: pointer; }
+
+.form-options .options .btn:hover { background: #318a4e; border: solid #3ca35e 3px; }
+
+.form-options .options .btnexit { float: left; margin: 0 0 0 28px; width: 40px; height: 40px; background: #e94848; color: #ffffff; font-size: 1.2em; border: solid #aa3535 3px; border-radius: 2em; cursor: pointer; }
+
+.form-options .options .btnexit:hover { background: #aa3535; border: solid #e94848 3px; }
+
+.form-options .options .btncoding { float: left; margin: 0 0 0 28px; width: 40px; height: 40px; background: #d8459b; color: #ffffff; font-size: 1.2em; border: solid #aa356c 3px; border-radius: 2em; cursor: pointer; }
+
+.form-options .options .btncoding:hover { background: #aa356c; border: solid #d8459b 3px; }
+
+.form-options .options .btnprinter { float: left; margin: 0 0 0 28px; width: 40px; height: 40px; background: #3c93a3; color: #ffffff; font-size: 1.2em; border: solid #356694 3px; border-radius: 2em; cursor: pointer; }
+
+.form-options .options .btnprinter:hover { background: #356694; border: solid #3c93a3 3px; }
+
+.form-options .options .btn.disabled { background: #e6e6e6; border: solid #a5a5a5 3px; color: #a5a5a5; cursor: initial; }
+
+/*-------------------------------------------
+  Formulario
+-------------------------------------------*/
+.form-data { float: left; width: 650px; margin: 0 0 35px 0; background: #ffffff; box-shadow: 0 1px 4px rgba(0,0,0,0.3); border-radius: 0.4em; }
+
+.form-data .head { padding: 15px 25px 10px; border-bottom: solid #e6e6e6 1px; }
+
+.form-data .head h1 { color: #316352; font-size: 1.8em; font-weight: bold; }
+
+.form-data .body .first { float: left; margin: 15px 0 0 25px; }
+
+.form-data .body .last { float: right; margin: 15px 25px 0 0; }
+
+.form-data .body .label { display: block; margin: 20px 0 8px 0; color: #505050; font-size: 1em; font-weight: bold; }
+
+.form-data .body .text { width: 262px; height: 40px; margin: 0 0 0 0; padding: 0 12px; background: #ffffff; border: solid #e6e6e6 1px; border-radius: 0.4em; ; color: #000000; font-size: 1em; }
+
+.form-data .body .select { width: 288px; height: 42px; margin: 0 0 0 0; padding: 0 8px; border: 1px solid #e6e6e6; border-radius: 0.4em; color: #353535; font-size: .9em; font-weight: bold; }
+
+.form-data .body .date { width: 262px; height: 40px; margin: 0 0 0 0; padding: 0 12px; background: #ffffff; border: solid #e6e6e6 1px; border-radius: 0.4em; ; color: #000000; font-size: 1em; }
+
+.form-data .body [type="date"]::-webkit-inner-spin-button { display: none; }
+
+.form-data .body [type="date"]::-webkit-calendar-picker-indicator { opacity: 1; }
+
+.form-data .body .file { display: block; margin: 12px 0 0 0; padding: 7px 12px 0; width: 260px; height: 31px; background: #3c93a3; border: solid #356694 2px; border-radius: 0.2em; color: #ffffff; font-size: 1.2em; cursor: pointer; }
+
+.form-data .body .btn { display: block; float: right; margin: 30px 25px 20px 0; width: 40px; height: 40px; background: #3ca35e; border: solid #318a4e 3px; border-radius: 2em; color: #ffffff; font-size: 1.3em; cursor: pointer; }
+
+.form-data .body .btn:hover { background: #318a4e; border: solid #3ca35e 3px; }
+
+.text:focus, .select:focus, .date:focus, button:focus { outline:none !important; outline-width: 0 !important; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+
+.form-data .body .user-image { display: block; width: 160px; height: 160px; border: solid #e6e6e6 3px; border-radius: 0.4em; }
+
+.form-data .delete { margin: 30px 0 0 0; text-align: center; }
+
+.form-data .delete h1 { color: #316352; font-size: 1.8em; font-weight: bold; }
+
+.form-data .delete .btn-si { float: left; margin: 35px 0 37px 150px; width: 80px; height: 45px; background: #e94848; border: solid #aa3535 3px; border-radius: 2em; color: #ffffff; font-size: 1.6em; cursor: pointer; }
+
+.form-data .delete .btn-no{ float: right; margin: 35px 150px 37px 0; width: 80px; height: 45px; background: #3c93a3; border: solid #356694 3px; border-radius: 2em; color: #ffffff; font-size: 1.6em; cursor: pointer; }
+
+.form-data .delete .btn-si:hover { background: #aa3535; border: solid #e94848 3px; }
+
+.form-data .delete .btn-no:hover { background: #356694; border: solid #3c93a3 3px; }

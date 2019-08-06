@@ -1,0 +1,168 @@
+-- --------------------------------------------------------
+-- Host:                         localhost
+-- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             10.2.0.5599
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Volcando estructura de base de datos para db_school
+CREATE DATABASE IF NOT EXISTS `db_school` /*!40100 DEFAULT CHARACTER SET utf32 COLLATE utf32_spanish2_ci */;
+USE `db_school`;
+
+-- Volcando estructura para tabla db_school.alumnos
+CREATE TABLE IF NOT EXISTS `alumnos` (
+  `usuario` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_ingreso` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `curp` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `rfc` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `domicilio` text COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `especialidad` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `documentacion` varchar(6) COLLATE utf8_spanish2_ci NOT NULL,
+  `observacion` text COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`usuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.asistencias
+CREATE TABLE IF NOT EXISTS `asistencias` (
+  `periodo_escolar` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `grupo` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `materia` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario_docente` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `dia` int(2) NOT NULL,
+  `mes` int(2) NOT NULL,
+  `ano` int(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.asistencias_detalle
+CREATE TABLE IF NOT EXISTS `asistencias_detalle` (
+  `periodo_escolar` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `grupo` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `materia` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario_docente` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario_alumno` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `falto` int(1) NOT NULL,
+  `impuntualidad` int(1) NOT NULL,
+  `conducta` int(1) NOT NULL,
+  `observacion` text COLLATE utf8_spanish2_ci NOT NULL,
+  `dia` int(2) NOT NULL,
+  `mes` int(2) NOT NULL,
+  `ano` int(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.docentes
+CREATE TABLE IF NOT EXISTS `docentes` (
+  `usuario` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_ingreso` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `curp` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `rfc` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `domicilio` text COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `nivel_estudios` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `documentacion` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `observacion` text COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`usuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.grupos
+CREATE TABLE IF NOT EXISTS `grupos` (
+  `periodo_escolar` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `grupo` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(60) COLLATE utf8_spanish2_ci NOT NULL,
+  `semestre` varchar(5) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.grupos_alumnos
+CREATE TABLE IF NOT EXISTS `grupos_alumnos` (
+  `periodo_escolar` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `grupo` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario_alumno` varchar(30) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.grupos_docentes
+CREATE TABLE IF NOT EXISTS `grupos_docentes` (
+  `periodo_escolar` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `grupo` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario_docente` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `materia` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.materias
+CREATE TABLE IF NOT EXISTS `materias` (
+  `materia` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `semestre` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`materia`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.periodos_escolares
+CREATE TABLE IF NOT EXISTS `periodos_escolares` (
+  `periodo_escolar` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `activo` varchar(6) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_inicio` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_fin` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`periodo_escolar`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.personal
+CREATE TABLE IF NOT EXISTS `personal` (
+  `usuario` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_ingreso` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `curp` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `rfc` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `domicilio` text COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `nivel_estudios` varchar(40) COLLATE utf8_spanish2_ci NOT NULL,
+  `documentacion` varchar(6) COLLATE utf8_spanish2_ci NOT NULL,
+  `observacion` text COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`usuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla db_school.usuarios
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usuario` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `correo` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `pass` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `tipo_permiso` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `imagen` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`usuario`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
